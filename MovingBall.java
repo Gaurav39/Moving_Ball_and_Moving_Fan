@@ -1,0 +1,38 @@
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+/*<applet code="MovingBall" width=220 height=220>
+</applet>
+
+*/
+
+
+public class MovingBall extends Applet 
+{
+int x=0;
+
+
+
+public void paint(Graphics g)
+{
+
+g.setColor(Color.GREEN);
+g.fillRect(0,0,100,100);
+g.fillRect(120,0,100,100);
+g.fillRect(0,120,100,100);
+g.fillRect(120,120,100,100);
+g.fillOval(x%220,110,9,9);
+try
+{
+Thread.sleep(50);
+}
+catch(InterruptedException x)
+{
+}
+x=x+10;
+repaint();
+
+
+
+}
+}
